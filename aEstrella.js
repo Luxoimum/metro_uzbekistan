@@ -1,4 +1,3 @@
-
 (function(definition) {
   /* global module, define */
   if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -6,7 +5,6 @@
   } else if (typeof define === 'function' && define.amd) {
     define([], definition);
   } else {
-    console.log(definition);
     var exports = definition();
     window.astar = exports.astar;
     window.Graph = exports.Graph;

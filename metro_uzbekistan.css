@@ -150,8 +150,13 @@ pre span.key {
   background-color: #1abc48;
 }
 
-.grid_item.lineaAmarilla {
+.grid_item.lineaAzul {
   background-color: #e8de2c;
+}
+.grid_item.camino {
+  border: 3px solid black;
+  border-radius: 15px;
+  background-color: white;
 }
 .grid_item.active {
 	background-color: #1e81a8;
