@@ -234,15 +234,13 @@ GraphSearch.prototype.cellClicked = function($end) {
           {'x':13, 'y':19, 'node':(13*30)+19, 'peso': 5} // Pakhtakor -> Mustakillik
         ],
       }
-  console.log(trayecto)
-  console.log("pesos", cambiosDePeso[trayecto])
+
+  // Modificamos los pesos de los campos que nos interesan (los trasbordos dobles)
   if (!!cambiosDePeso[trayecto]){
-    // Modificamos los pesos de los campos que nos interesan
     cambiosDePeso[trayecto].forEach((pesoNuevo) => {
       this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight = parseFloat(pesoNuevo.peso)
       this.graph.nodes[pesoNuevo.node].weight = parseFloat(pesoNuevo.peso)
     })
-
   }
 
   if($end.hasClass(css.wall) || $end.hasClass(css.start)) {
