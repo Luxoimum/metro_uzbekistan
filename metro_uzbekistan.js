@@ -1,5 +1,6 @@
-var WALL = 0, performance = window.performance;
-var estaciones = {
+//Creamos variables globales
+let WALL = 0, performance = window.performance;
+let estaciones = {
   '522': 'Shakhriston',// linea verde
   '722': 'Bodomzor',
   '922': 'Minor',
@@ -27,64 +28,25 @@ var estaciones = {
   '1526': 'Mashinasozlar',
   '1528': 'Dostlik'
 }
+let css = { start: "start", finish: "finish", wall: "wall", active: "active" };
 $(function() {
-  var $grid = $("#search_grid"),
-      $selectWallFrequency = $("#selectWallFrequency")
-
-  var opts = {
+  let $grid = $("#search_grid")
+  let opts = {
     wallFrequency: 0.1,
     gridSize: 30,
     debug: false,
     closest: false
   };
-
-  var grid = new GraphSearch($grid, opts, astar.search);
-
-  $("#btnGenerate").click(function() {
-    grid.initialize()
-  });
-
-  $selectWallFrequency.change(function() {
-    grid.setOption({wallFrequency: $(this).val()})
-    grid.initialize();
-  });
-
-  $selectGridSize.change(function() {
-    grid.setOption({gridSize: $(this).val()})
-    grid.initialize();
-  });
-
-  $checkDebug.change(function() {
-    grid.setOption({debug: $(this).is(":checked")})
-  });
-
-  $searchDiagonal.change(function() {
-    var val = $(this).is(":checked")
-    grid.setOption({diagonal: val})
-    grid.graph.diagonal = val
-  });
-
-  $checkClosest.change(function() {
-    grid.setOption({closest: $(this).is(":checked")});
-  });
-
-  $("#generateWeights").click( function () {
-    if ($("#generateWeights").prop("checked")) {
-      $('#weightsKey').slideDown();
-    } else {
-      $('#weightsKey').slideUp();
-    }
-  });
-
+  // Creamos el objeto GraphSearch que sera el mapa del metro de Tashkent
+  let grid = new GraphSearch($grid, opts, astar.search);
+  // Iniciamos el programa
+  grid.initialize()
 });
 
-var css = { start: "start", finish: "finish", wall: "wall", active: "active" };
-
 function GraphSearch($graph, options, implementation) {
-  this.$graph = $graph;
-  this.search = implementation;
-  this.opts = $.extend({wallFrequency:0.1, debug:true, gridSize:30}, options);
-  this.initialize();
+  this.$graph = $graph
+  this.search = implementation
+  this.opts = $.extend({wallFrequency:0.1, debug:true, gridSize:30}, options)
 }
 GraphSearch.prototype.setOption = function(opt) {
   this.opts = $.extend(this.opts, opt);
@@ -105,16 +67,16 @@ GraphSearch.prototype.initialize = function() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 3
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 4
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 5
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31,0,0,0,18,0,0,0,0,0,0,0,// 6
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.1,0,0,0,1.8,0,0,0,0,0,0,0,// 6
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 7
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,0,0,0,13,0,0,0,0,0,0,0,// 8
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.3,0,0,0,1.3,0,0,0,0,0,0,0,// 8
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 9
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,0,0,0,9,0,0,0,0,0,0,0,// 0
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.4,0,0,0,9,0,0,0,0,0,0,0,// 0
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 1
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,8.5,0,0,0,0,0,0,0,// 2
-    0,0,0,0,0,0,1,36,1,11,1,15,1,18,1,10,1,23,1,14,1,15,1,13,1,15,1,15,1,0,// 3
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,22,0,0,0,0,0,0,0,// 4
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,19,1,12,1,15,1,37,1,16,1,0,// 5
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.3,0,0,0,0.85,0,0,0,0,0,0,0,// 2
+    0,0,0,0,0,0,1,3.6,1,1.1,1,1.5,1,1.8,1,1.0,1,2.3,1,1.4,1,1.5,1,1.3,1,1.5,1,1.5,1,0,// 3
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,0,0,0,2.2,0,0,0,0,0,0,0,// 4
+    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1.9,1,1.2,1,1.5,1,3.7,1,1.6,1,0,// 5
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 6
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 7
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
