@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="metro_milano.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+        <script type='text/javascript' src='metro_milano.js'></script>
+        <script type='text/javascript' src='aEstrella.js'></script>
+        <title>Metropolitana Di Milano</title>
+    </head>
+<body>
+    <div id="header"> 
+        <h1>Metropolitana Di Milano</h1>
+    </div>
+    <div id="content">
+        <div style="display: none" id="controls" class='clear'>
+                <label for="selectWallFrequency">Wall Frequency: </label>
+                <select id="selectWallFrequency">
+                    <option value=".1">10%</option>
+                    <option value=".2">20%</option>
+                    <option value=".3">30%</option>
+                    <option value=".4">40%</option>
+                </select>
+                <br />
+                <label for="selectGridSize">Grid Size: </label>
+                <select id="selectGridSize" name="selectGridSize">
+                    <option value="10">10x10</option>
+                    <option value="15">15x15</option>
+                    <option value="20">20x20</option>
+                    <option value="30">30x30</option>
+                    <option value="40" selected="selected">40x40</option>
+                    <option value="50">50x50</option>
+                    <option value="100">100x100</option>
+                    <option value="150">150x150</option>
+                </select>
+
+                <br />
+                <label for="checkDebug">Show search info?</label>
+                <input type="checkbox" name="checkDebug" id="checkDebug" />
+                <br />
+                <label for="searchDiagonal">Allow diagonal movement?</label>
+                <input type="checkbox" name="searchDiagonal" id="searchDiagonal" />
+                <br />
+                <label for="checkClosest">Closest node if target unreachable?</label>
+                <input type="checkbox" name="checkClosest" id="checkClosest" />
+                <br />
+                <label for="generateWeights">Add random weights?</label>
+                <input type="checkbox" name="generateWeights" id="generateWeights" />
+                <br />
+                <label for="displayWeights">Display weight values?</label>
+                <input type="checkbox" name="displayWeights" id="displayWeights" />
+                <br />
+                <input type="button" id="btnGenerate" value="Generate New Map" />
+                <fieldset id='weightsKey'>
+                    <legend>Key:</legend>
+                    <div>
+                    <span class="grid_item weight1" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWeight3"></span> Weight of 1 </div>
+                    <div>
+                    <span class="grid_item weight3" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWeight3"></span> Weight of 3 </div>
+                    <div>
+                    <span class="grid_item weight5" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWeight3"></span> Weight of 5 </div>
+                    <div>
+                    <span class="grid_item wall" style="width: 14.25px; height: 14.25px; margin-right: 6px;" id="keyWall"></span> Wall (imapassable) </div>
+                </fieldset>
+                <br />
+        </div>
+        <h3>Calculadora de Viajes</h3>
+        <div class="container">
+            <div class="row">
+                <div id="col_origen" class="col-sm">
+                    <label class="mr-sm-2" for="inlineFormCustomSelectPref">Origen</label>
+                    <select id="select_origen" class="custom-select">
+                        <option value="0">Origen</option>
+                        <option value="7_18" selected>Villa San Giovanni</option>
+                        <option value="8_18">Precotto</option>
+                        <option value="9_18">Gorla</option>
+                        <option value="10_18">Turro</option>
+                        <option value="11_18">Rovereto</option>
+                        <option value="12_18">Pasteur</option>
+                        <option value="13_18">Loreto</option>
+                        <option value="17_18">Lima</option>
+                        <option value="18_18">Pta Venezia</option>
+                        <option value="18_17">Palestro</option>
+                        <option value="18_15">S Babila</option>
+                        <option value="18_14">Duomo</option>
+                        <option value="18_11">Cordusio</option>
+                        <option value="18_10">Cairoli</option>
+                        <option value="18_9">Cadorna</option>
+                        <option value="18_8">Conziliacione</option>
+                        <option value="18_5">Pagano</option>
+                        <option value="17_5">Buonarott</option>
+                        <option value="16_5">Amendola fier</option>
+                        <option value="15_5">Lotto fiera</option>
+                        <option value="14_5">Qt8</option>
+                        <option value="19_5">Wagner</option>
+                        <option value="20_5">De Angeli</option>
+                        <option value="21_5">Gambara</option>
+                        <option value="22_5">Bande Ner</option>
+                        <option value="23_5">Primaticcio</option>
+                        <option value="24_5">Inganni</option>
+                        <option value="25_5">Biseglie</option>
+                        <option value="9_20">Cascina Gobba </option>
+                        <option value="10_20">Creszenago </option>
+                        <option value="11_20">Cimiano </option>
+                        <option value="12_20">Udine </option>
+                        <option value="13_20">Lambrate FS </option>
+                        <option value="13_19">Piola </option>
+                        <option value="13_16">Calazzo </option>
+                        <option value="13_12">Gioia </option>
+                        <option value="13_10">Garibaldi </option>
+                        <option value="15_9">Moscova </option>
+                        <option value="17_9">Lanza </option>
+                        <option value="19_9">S.Ambrogio </option>
+                        <option value="20_9">S.Angostino </option>
+                        <option value="21_9">Pta.Genova FS </option>
+                        <option value="22_9">Romolo </option>
+                        <option value="23_9">Famagosta </option>
+                        <option value="10_14">Maciachini </option>
+                        <option value="11_14">Zara </option>
+                        <option value="12_14">Sondrio </option>
+                        <option value="13_14">Centrale </option>   
+                        <option value="14_14">Repubblica </option>
+                        <option value="15_14">Montenapoleone </option>
+                        <option value="16_14">Turati </option>   
+                        <option value="19_14">Missori </option>
+                        <option value="20_14">Crocetta </option>
+                        <option value="21_14">Porta Romana </option>
+                        <option value="22_14">Loddi Tibb </option>
+                    </select>
+                </div>
+                <div id="col_destino" class="col-sm">
+                    <label class="mr-sm-2" for="inlineFormCustomSelectPref">Destino</label>
+                    <select id="select_destino" class="custom-select">
+                        <option value="0" selected>Destino</option>
+                        <option value="7_18">Villa San Giovanni </option>
+                        <option value="8_18">Precotto</option>
+                        <option value="9_18">Gorla</option>
+                        <option value="10_18">Turro</option>
+                        <option value="11_18">Rovereto</option>
+                        <option value="12_18">Pasteur</option>
+                        <option value="13_18">Loreto</option>
+                        <option value="17_18">Lima</option>
+                        <option value="18_18">Pta Venezia</option>
+                        <option value="18_17">Palestro</option>
+                        <option value="18_15">S Babila</option>
+                        <option value="18_14">Duomo</option>
+                        <option value="18_11">Cordusio</option>
+                        <option value="18_10">Cairoli</option>
+                        <option value="18_9">Cadorna</option>
+                        <option value="18_8">Conziliacione</option>
+                        <option value="18_5">Pagano</option>
+                        <option value="17_5">Buonarott</option>
+                        <option value="16_5">Amendola fiera</option>
+                        <option value="15_5">Lotto fiera</option>
+                        <option value="14_5">Qt8</option>
+                        <option value="19_5">Wagner</option>
+                        <option value="20_5">De Angeli</option>
+                        <option value="21_5">Gambara</option>
+                        <option value="22_5">Bande Ner</option>
+                        <option value="23_5">Primaticcio</option>
+                        <option value="24_5">Inganni</option>
+                        <option value="25_5">Biseglie</option>
+                        <option value="9_20">Cascina Gobba </option>
+                        <option value="10_20">Creszenago </option>
+                        <option value="11_20">Cimiano </option>
+                        <option value="12_20">Udine </option>
+                        <option value="13_20">Lambrate FS </option>
+                        <option value="13_19">Piola </option>
+                        <option value="13_16">Calazzo </option>
+                        <option value="13_12">Gioia </option>
+                        <option value="13_10">Garibaldi </option>
+                        <option value="15_9">Moscova </option>
+                        <option value="17_9">Lanza </option>
+                        <option value="19_9">S.Ambrogio </option>
+                        <option value="20_9">S.Angostino </option>
+                        <option value="21_9">Pta.Genova FS </option>
+                        <option value="22_9">Romolo </option>
+                        <option value="23_9">Famagosta </option>
+                        <option value="10_14">Maciachini </option>
+                        <option value="11_14">Zara </option>
+                        <option value="12_14">Sondrio </option>
+                        <option value="13_14">Centrale </option>   
+                        <option value="14_14">Repubblica </option>
+                        <option value="15_14">Montenapoleone </option>
+                        <option value="16_14">Turati </option>   
+                        <option value="19_14">Missori </option>
+                        <option value="20_14">Crocetta </option>
+                        <option value="21_14">Porta Romana </option>
+                        <option value="22_14">Loddi Tibb </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div id="search_grid">Loading grid...</div>
+                    </div>
+                    <div class="col-sm">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Origen</th>
+                                  <th scope="col">Destino</th>
+                                </tr>
+                            </thead>
+                            <tbody id='table_tbody'></tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
