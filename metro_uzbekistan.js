@@ -239,10 +239,8 @@ GraphSearch.prototype.cellClicked = function($end) {
   if (!!cambiosDePeso[trayecto]){
     // Modificamos los pesos de los campos que nos interesan
     cambiosDePeso[trayecto].forEach((pesoNuevo) => {
-      console.log(pesoNuevo)
       this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight = parseFloat(pesoNuevo.peso)
       this.graph.nodes[pesoNuevo.node].weight = parseFloat(pesoNuevo.peso)
-      console.log(this.graph.grid[pesoNuevo.x][pesoNuevo.y])
     })
 
   }
