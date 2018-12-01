@@ -122,6 +122,9 @@ pre span.key {
 	float: left;
 	line-height:12px;
 	font-size:7px;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
 }
 .grid_item.wall {
   background-color: #FFFFFF;
@@ -152,11 +155,15 @@ pre span.key {
 
 .grid_item.lineaAzul {
   background-color: #e8de2c;
+
 }
 .grid_item.camino {
   border: 3px solid black;
   border-radius: 15px;
   background-color: white;
+  margin: 5px 5px;
+  width: 10px !important;
+  height: 10px !important;
 }
 .grid_item.active {
 	background-color: #1e81a8;

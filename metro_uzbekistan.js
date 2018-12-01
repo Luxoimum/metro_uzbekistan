@@ -29,17 +29,12 @@ var estaciones = {
 }
 $(function() {
   var $grid = $("#search_grid"),
-    $selectWallFrequency = $("#selectWallFrequency"),
-    $selectGridSize = $("#selectGridSize"),
-    $checkDebug = $("#checkDebug"),
-    $searchDiagonal = $("#searchDiagonal"),
-    $checkClosest = $("#checkClosest")
+      $selectWallFrequency = $("#selectWallFrequency")
 
   var opts = {
     wallFrequency: $selectWallFrequency.val(),
     gridSize: 30,
     debug: false,
-    diagonal: false,
     closest: false
   };
 
@@ -135,33 +130,28 @@ GraphSearch.prototype.initialize = function() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]// 9
 
-  let cellWidth = ($graph.width()/this.opts.gridSize)-2,  // -2 for border
-      cellHeight = ($graph.height()/this.opts.gridSize)-2,
-      $cellTemplate = $("<span />").addClass("grid_item").width(cellWidth).height(cellHeight),
+  // Creamos la etiqueta span que se va a usar como Template para las paradas y caminos
+  let $cellTemplate = $("<span />").addClass("grid_item"),
       startSet = false,
       posicion_mapa = 0
 
-  // Recorremos las filas
-  console.log(mapa)
+  // Recorremos las x filas
   for(let x = 0; x < this.opts.gridSize; x++) {
     let $row = $("<div class='clear' />"),
         nodeRow = [],
         gridRow = []
 
-    // Recorremos las columnas (aqui es donde se crean todas las paradas)
+    // Recorremos las y columnas (aqui es donde se crean todas las paradas y los caminos usando la plantilla)
     for(let y = 0; y < this.opts.gridSize; y++) {
       let id = 'cell_'+x+'_'+y,
           $cell = $cellTemplate.clone()
 
-      $cell.attr('id', id).attr('x', x).attr('y', y).attr('coord', x+'_'+y)
-
-      $row.append($cell)
-      gridRow.push($cell)
-
-      // calculamos el desplazamiento dentro del array mapa
+      // calculamos el desplazamiento dentro del array mapa para encontrar nuestra parada o camino
       posicion_mapa = ((x)*this.opts.gridSize) + y
 
-      console.log(x, y, x + "" + y, mapa[posicion_mapa], estaciones[x + "" + y])
+      $cell.attr('id', id).attr('x', x).attr('y', y).attr('coord', x+'_'+y)
+      $row.append($cell)
+      gridRow.push($cell)
       $cell.addClass('cell') // mirar porque de le agrega la clase cell ahora y no antes de meterlo en gridRow
 
       /*
@@ -176,40 +166,39 @@ GraphSearch.prototype.initialize = function() {
         nodeRow.push(WALL) // nodeRow parece ser el grafo que se le va a pasar al algoritmo
         $cell.addClass(css.wall)
       } else {
-        $cell.attr("data-toggle","tooltip");
-        $cell.attr("data-placement","top");
-        if(estaciones[x+""+y]){
-          $cell.attr("title", estaciones[x+""+y]);
+        $cell.attr("data-toggle", "tooltip")
+        $cell.attr("data-placement", "top")
+        if(!!estaciones[x+""+y]){
+          $cell.attr("title", estaciones[x+""+y])
         }
 
         // color de cada linea
-        console.log('color de la linea: ' + x, y, colorLinea(x+""+y))
-        $cell.addClass(colorLinea(x+""+y));
-        nodeRow.push(peso_celda);
-        $cell.addClass('weight' + peso_celda);
+        $cell.addClass(colorLinea(x+""+y))
 
+        // agregamos el peso de la celda al array de nodos (que se pasa en un futuro al algoritmo astar)
+        nodeRow.push(peso_celda)
+
+        // no me gusta eel funcionamiento de este if
         if (!startSet) {
-
-          $cell.addClass(css.start);
-          startSet = true;
+          $cell.addClass(css.start) // mirar si se puede quitar esta linea
+          startSet = true
         }
       }
     }
-    $('[data-toggle="tooltip"]').tooltip();
-    $graph.append($row);
 
-    this.grid.push(gridRow);
-    nodes.push(nodeRow);
+    $('[data-toggle="tooltip"]').tooltip()
+    $graph.append($row)
+
+    this.grid.push(gridRow)
+    nodes.push(nodeRow)
   }
-
-  this.graph = new Graph(nodes);
+  this.graph = new Graph(nodes)
 
   // bind cell event, set start/wall positions
-  this.$cells = $graph.find(".grid_item");
+  this.$cells = $graph.find(".grid_item")
   this.$cells.click(function(){
     if ( $(this).attr('data-original-title') != ''){
-
-      $("#select_destino").val($(this).attr("coord"));
+      $("#select_destino").val($(this).attr("coord"))
       self.cellClicked($(this));
     }
   });
@@ -390,7 +379,6 @@ function colorLinea(estacion){
   let linea_roja = ['1328', '1326', '1324', '1320', '1318', '1316', '1314', '1312', '1310', '138', '136']
   let linea_azul = ['518', '718', '918', '1118', '1518', '1520', '1524', '1526', '1528']
   let linea_verde = ['522', '722', '922', '1122', '1322', '1522']
-  console.log(jQuery.inArray(estacion, linea_roja), estacion)
   if(jQuery.inArray(estacion, linea_roja) != '-1'){
     return "lineaRoja";
   }else if(jQuery.inArray(estacion, linea_azul) != '-1'){
