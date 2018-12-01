@@ -60,29 +60,29 @@ GraphSearch.prototype.initialize = function() {
 
   //relacionamos las estaciones con sus nombres
   let mapa = [
-  //0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 0
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 1
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 2
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 3
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 4
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 5
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.1,0,0,0,1.8,0,0,0,0,0,0,0,// 6
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 7
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.3,0,0,0,1.3,0,0,0,0,0,0,0,// 8
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 9
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.4,0,0,0,9,0,0,0,0,0,0,0,// 0
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,// 1
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.3,0,0,0,0.85,0,0,0,0,0,0,0,// 2
-    0,0,0,0,0,0,1,3.6,1,1.1,1,1.5,1,1.8,1,1.0,1,2.3,1,1.4,1,1.5,1,1.3,1,1.5,1,1.5,1,0,// 3
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.0,0,0,0,2.2,0,0,0,0,0,0,0,// 4
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1.9,1,1.2,1,1.5,1,3.7,1,1.6,1,0,// 5
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 6
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 7
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 9
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 0
-    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 1
+  //0   1   2   3   4   5   6   7   8   9   0   1   2   3   4   5   6   7   8   9   0   1   2   3   4   5   6   7   8   9
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 0
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 1
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 2
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 3
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 4
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 5
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,3.1,0  ,0  ,0  ,1.8,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 6
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 7
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,2.3,0  ,0  ,0  ,1.3,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 8
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 9
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,2.4,0  ,0  ,0  ,9  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 0
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,1  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 1
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1.3,0  ,0  ,0  ,0.85,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 2
+    0  ,0  ,0  ,0  ,0  ,0  ,1  ,3.6,1  ,1.1,1  ,1.5,1  ,1.8,1  ,1.0,1  ,2.3,1  ,1.4,1  ,1.5,1  ,1.3,1  ,1.5,1  ,1.5,1  ,0  ,// 3
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1.0,0  ,0  ,0  ,2.2,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 4
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,1  ,1.9,1  ,1.2,1  ,1.5,1  ,3.7,1  ,1.6,1  ,0  ,// 5
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 6
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 7
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 8
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 9
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,0  ,// 0
+    0  ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 1
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 2
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 3
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 4
@@ -91,7 +91,7 @@ GraphSearch.prototype.initialize = function() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 7
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]// 9
-
+  console.log("mapa", mapa)
   // Creamos la etiqueta span que se va a usar como Template para las paradas y caminos
   let $cellTemplate = $("<span />").addClass("grid_item"),
       startSet = false,
@@ -130,6 +130,7 @@ GraphSearch.prototype.initialize = function() {
       } else {
         $cell.attr("data-toggle", "tooltip")
         $cell.attr("data-placement", "top")
+        //$cell.attr("data-html", "true") // Descomentar esta linea si se queire agregar html al tooltip
         if(!!estaciones[x+""+y]){
           $cell.attr("title", estaciones[x+""+y])
         }
@@ -152,16 +153,19 @@ GraphSearch.prototype.initialize = function() {
     $graph.append($row)
 
     this.grid.push(gridRow)
+
     nodes.push(nodeRow)
   }
+  console.log("nodos", nodes)
   this.graph = new Graph(nodes)
+  console.log("graph.grid", this.graph.grid)
 
   // bind cell event, set start/wall positions
   this.$cells = $graph.find(".grid_item")
   this.$cells.click(function(){
     if ( $(this).attr('data-original-title') != ''){
       $("#select_destino").val($(this).attr("coord"))
-      self.cellClicked($(this));
+      self.cellClicked($(this))
     }
   });
 
@@ -173,63 +177,99 @@ GraphSearch.prototype.initialize = function() {
 
   $("#select_origen").change(function(event){
     //seleccionamos un origen en la lista desplegable
-    var origenCoords = $("#select_origen :selected").val();
+    let origenCoords = $("#select_origen :selected").val()
 
-    $(".start" ).removeClass(css.start);
-    if( $("[coord='"+origenCoords+"']").hasClass("lineaRoja") ){
+    $(".start" ).removeClass(css.start)
+    if($("[coord='"+origenCoords+"']").hasClass("lineaRoja")){
 
-      $("[coord='"+origenCoords+"']").removeClass("lineaRoja");
+      $("[coord='"+origenCoords+"']").removeClass("lineaRoja")
     }else if( $("[coord='"+origenCoords+"']").hasClass("lineaVerde") ) {
 
-      $("[coord='"+origenCoords+"']").removeClass("lineaVerde");
+      $("[coord='"+origenCoords+"']").removeClass("lineaVerde")
     }else{
 
-      $("[coord='"+origenCoords+"']").removeClass("lineaAmarilla");
+      $("[coord='"+origenCoords+"']").removeClass("lineaAmarilla")
     }
 
-    $( "[coord='"+origenCoords+"']" ).addClass(css.start);
+    $( "[coord='"+origenCoords+"']" ).addClass(css.start)
   });
 
   $("#select_destino").change(function(event){
     //seleccionamos un destino en la lista desplegable
-    var destinoCoords = $("#select_destino :selected").val();
+    var destinoCoords = $("#select_destino :selected").val()
 
-    $( ".end" ).removeClass(css.start);
-    $( "[coord='"+destinoCoords+"']" ).addClass(css.finish);
+    $( ".end" ).removeClass(css.start)
+    $( "[coord='"+destinoCoords+"']" ).addClass(css.finish)
     //llamar al seach
-    self.cellClicked( $( "[coord='"+destinoCoords+"']" ) );
-    $("#select_origen").val(destinoCoords);
-  });
-
-
-
-};
+    self.cellClicked( $( "[coord='"+destinoCoords+"']" ) )
+    $("#select_origen").val(destinoCoords)
+  })
+}
 GraphSearch.prototype.cellClicked = function($end) {
 
-  var end = this.nodeFromElement($end);
+  let end = this.nodeFromElement($end),
+      x = $(".start").attr("x"),
+      y = $(".start").attr("y"),
+      lineaInit = colorLinea(x + "" + y).split('linea')[1],
+      lineaFin = colorLinea($end.attr("x") + "" + $end.attr("y")).split('linea')[1],
+      trayecto = 'linea' + lineaInit + lineaFin,
+      cambiosDePeso = {
+        'lineaRojaAzul': [
+          {'x':14, 'y':18, 'node':(14*30)+18},
+          {'x':12, 'y':18, 'node':(12*30)+18},
+          {'x':13, 'y':22, 'node':(13*30)+22},
+          {'x':15, 'y':23, 'node':(15*30)+23},
+          {'x':15, 'y':21, 'node':(15*30)+21}
+          ],
+        'lineaRojaVerde': "cambio de grafo",
+        'lineaAzulRoja': "cambio de grafo",
+        'lineaAzulVerde': "cambio de grafo",
+        'lineaVerdeRoja': "cambio de grafo",
+        'lineaVerdeAzul': "cambio de grafo",
+      }
 
-  if($end.hasClass(css.wall) || $end.hasClass(css.start)) {
-    return;
+  console.log(cambiosDePeso[trayecto])
+  if (!!cambiosDePeso[trayecto] && trayecto == 'lineaRojaAzul'){
+
+
+    // Modificamos los pesos de los campos que nos interesan
+    cambiosDePeso[trayecto].forEach((pesoNuevo) => {
+      this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight = this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight + 1
+    })
+    //Rehacemos el grafo
+    let newGraph = []
+    this.graph.grid.forEach((elem) => {
+      let newRow = []
+      elem.forEach((nodo) => {
+        newRow.push(nodo.weight)
+      })
+      newGraph.push(newRow)
+    })
+    console.log(newGraph)
   }
 
-  this.$cells.removeClass(css.finish);
-  $end.addClass("finish");
-  var $start = this.$cells.filter("." + css.start),
-    start = this.nodeFromElement($start);
+  if($end.hasClass(css.wall) || $end.hasClass(css.start)) {
+    return
+  }
 
-  var sTime = performance ? performance.now() : new Date().getTime();
+  this.$cells.removeClass(css.finish)
+  $end.addClass("finish")
 
-  var path = this.search(this.graph, start, end, {
+  let $start = this.$cells.filter(".start"),
+      start = this.nodeFromElement($start)
+
+  let sTime = performance ? performance.now() : new Date().getTime();
+
+  // aqui es donde se agrega la heuristica
+  let path = this.search(this.graph, start, end, {
     closest: this.opts.closest
   });
-  var fTime = performance ? performance.now() : new Date().getTime(),
+  let fTime = performance ? performance.now() : new Date().getTime(),
     duration = (fTime-sTime).toFixed(2);
 
   if(path.length === 0) {
-    //$("#message").text("couldn't find a path (" + duration + "ms)");
     this.animateNoPath();
-  }
-  else {
+  } else {
     //$("#message").text("search took " + duration + "ms.");
     this.drawDebugInfo();
     this.animatePath(path);

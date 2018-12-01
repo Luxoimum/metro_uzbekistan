@@ -139,7 +139,7 @@ pre span.key {
   background-color: #ABD1FF;
 }
 .grid_item.start {
-  background-color: #FF703F;
+  background-color: #FF703F !important;
 }
 .grid_item.end {
   background-color: #0831d6;
@@ -154,11 +154,11 @@ pre span.key {
 }
 
 .grid_item.lineaAzul {
-  background-color: #e8de2c;
+  background-color: #1e81a8;
 
 }
 .grid_item.camino {
-  border: 3px solid black;
+  border: 1px solid black;
   border-radius: 15px;
   background-color: white;
   margin: 5px 5px;
@@ -166,10 +166,10 @@ pre span.key {
   height: 10px !important;
 }
 .grid_item.active {
-	background-color: #1e81a8;
+	background-color: #e8de2c;
 }
 .grid_item.finish {
-  background-color: #0831d6;
+  background-color: #e0d625;
 }
 #weightsKey {
   display: none;
