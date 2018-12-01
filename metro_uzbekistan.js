@@ -91,7 +91,6 @@ GraphSearch.prototype.initialize = function() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 7
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]// 9
-  console.log("mapa", mapa)
   // Creamos la etiqueta span que se va a usar como Template para las paradas y caminos
   let $cellTemplate = $("<span />").addClass("grid_item"),
       startSet = false,
@@ -156,9 +155,7 @@ GraphSearch.prototype.initialize = function() {
 
     nodes.push(nodeRow)
   }
-  console.log("nodos", nodes)
   this.graph = new Graph(nodes)
-  console.log("graph.grid", this.graph.grid)
 
   // bind cell event, set start/wall positions
   this.$cells = $graph.find(".grid_item")
@@ -206,7 +203,6 @@ GraphSearch.prototype.initialize = function() {
   })
 }
 GraphSearch.prototype.cellClicked = function($end) {
-
   let end = this.nodeFromElement($end),
       x = $(".start").attr("x"),
       y = $(".start").attr("y"),
@@ -215,37 +211,40 @@ GraphSearch.prototype.cellClicked = function($end) {
       trayecto = 'linea' + lineaInit + lineaFin,
       cambiosDePeso = {
         'lineaRojaAzul': [
-          {'x':14, 'y':18, 'node':(14*30)+18},
-          {'x':12, 'y':18, 'node':(12*30)+18},
-          {'x':13, 'y':22, 'node':(13*30)+22},
-          {'x':15, 'y':23, 'node':(15*30)+23},
-          {'x':15, 'y':21, 'node':(15*30)+21}
-          ],
-        'lineaRojaVerde': "cambio de grafo",
-        'lineaAzulRoja': "cambio de grafo",
-        'lineaAzulVerde': "cambio de grafo",
-        'lineaVerdeRoja': "cambio de grafo",
-        'lineaVerdeAzul': "cambio de grafo",
+          {'x':14, 'y':22, 'node':(13*30)+22, 'peso': 5}, // Amir -> Oybek
+          {'x':13, 'y':21, 'node':(13*30)+21, 'peso': 5}, // Amir -> Mustakillik
+        ],
+        'lineaRojaVerde': [
+          {'x':14, 'y':22, 'node':(14*30)+22, 'peso': 5}, // Amir -> Oybek
+          {'x':14, 'y':18, 'node':(14*30)+18, 'peso': 5}, // Pakhtakor -> Uzbekistan
+        ],
+        'lineaAzulRoja': [
+          {'x':14, 'y':22, 'node':(14*30)+22, 'peso': 5}, // Amir -> Oybek
+        ],
+        'lineaAzulVerde': [
+          {'x':13, 'y':21, 'node':(13*30)+21, 'peso': 5}, // Amir -> Mustakillik
+          {'x':13, 'y':19, 'node':(13*30)+19, 'peso': 5} // Pakhtakor -> Mustakillik
+        ],
+        'lineaVerdeRoja': [
+          {'x':14, 'y':22, 'node':(14*30)+22, 'peso': 5}, // Amir -> Oybek
+          {'x':14, 'y':18, 'node':(14*30)+18, 'peso': 5} // Uzbekistan -> Pakhtakor
+        ],
+        'lineaVerdeAzul': [
+          {'x':13, 'y':21, 'node':(13*30)+21, 'peso': 5}, // Amir -> Mustakillik
+          {'x':13, 'y':19, 'node':(13*30)+19, 'peso': 5} // Pakhtakor -> Mustakillik
+        ],
       }
-
-  console.log(cambiosDePeso[trayecto])
-  if (!!cambiosDePeso[trayecto] && trayecto == 'lineaRojaAzul'){
-
-
+  console.log(trayecto)
+  console.log("pesos", cambiosDePeso[trayecto])
+  if (!!cambiosDePeso[trayecto]){
     // Modificamos los pesos de los campos que nos interesan
     cambiosDePeso[trayecto].forEach((pesoNuevo) => {
-      this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight = this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight + 1
+      console.log(pesoNuevo)
+      this.graph.grid[pesoNuevo.x][pesoNuevo.y].weight = parseFloat(pesoNuevo.peso)
+      this.graph.nodes[pesoNuevo.node].weight = parseFloat(pesoNuevo.peso)
+      console.log(this.graph.grid[pesoNuevo.x][pesoNuevo.y])
     })
-    //Rehacemos el grafo
-    let newGraph = []
-    this.graph.grid.forEach((elem) => {
-      let newRow = []
-      elem.forEach((nodo) => {
-        newRow.push(nodo.weight)
-      })
-      newGraph.push(newRow)
-    })
-    console.log(newGraph)
+
   }
 
   if($end.hasClass(css.wall) || $end.hasClass(css.start)) {
@@ -264,6 +263,7 @@ GraphSearch.prototype.cellClicked = function($end) {
   let path = this.search(this.graph, start, end, {
     closest: this.opts.closest
   });
+
   let fTime = performance ? performance.now() : new Date().getTime(),
     duration = (fTime-sTime).toFixed(2);
 
