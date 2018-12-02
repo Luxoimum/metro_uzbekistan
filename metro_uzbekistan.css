@@ -41,9 +41,56 @@ body {
     list-style: none;
     width: 10px !important;
     height: 60px !important;
-    background-color: #55ac44;
     margin-top: -10px;
     margin-bottom:-10px;
     margin-left: 5px;
 }
-
+.linea-v {
+    background-color: #55ac44;
+}
+.linea-r {
+    background-color: #c02c2c;
+}
+.linea-a {
+    background-color: #22539c;
+}
+.l-uzb {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+    position: relative;
+    right: 319px;
+    top: 80px;
+}
+.l-yun {
+    position: relative;
+    left: 160px;
+}
+.uzbekistan-desp {
+    position: relative;
+    right: 30px;
+}
+.pakhtakor-desp {
+    position: relative;
+    right: 95px;
+    top: -59px;
+}
+.to-uzb {
+    -ms-transform: skewX(-25deg); /* IE 9 */
+    -webkit-transform: skewX(-25deg); /* Safari 3-8 */
+    transform: skewX(-25deg);
+    position: relative;
+    right: 15px;
+}
+.to-pak {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+    position: relative;
+    right: 60px;
+    top: -30px;
+}
+.uzbekistaned {
+    position: relative;
+    right: 30px;
+}
