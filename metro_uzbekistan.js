@@ -161,7 +161,7 @@ GraphSearch.prototype.initialize = function() {
       $("#select_destino").val($(this).attr("coord"))
       self.cellClicked($(this))
     }
-  });
+  })
 
   /*
       **********************
