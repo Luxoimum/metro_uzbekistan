@@ -38,7 +38,7 @@ $(function() {
     closest: false
   };
   // Creamos el objeto GraphSearch que sera el mapa del metro de Tashkent
-  let grid = new GraphSearch($grid, opts, astar.search);
+  let grid = new GraphSearch($grid, opts, astar.search)
   // Iniciamos el programa
   grid.initialize()
 });
