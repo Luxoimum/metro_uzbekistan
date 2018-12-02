@@ -72,8 +72,13 @@ body {
 }
 .pakhtakor-desp {
     position: relative;
-    right: 63px;
+    right: 60px;
     top: -59px;
+}
+.gafur-desp {
+    position: relative;
+    right: 120px;
+    top: -120px;
 }
 .to-uzb {
     -ms-transform: skewX(-20deg); /* IE 9 */
@@ -89,4 +94,18 @@ body {
     position: relative;
     right: 42px;
     top: -30px;
+}
+
+.to-gaf {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+    position: relative;
+    right: 90px;
+    top: -90px;
+}
+.diagonal-desp {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari 3-8 */
+    transform: rotate(45deg);
 }
