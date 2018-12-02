@@ -145,6 +145,7 @@ GraphSearch.prototype.initialize = function() {
     }
 
     $('[data-toggle="tooltip"]').tooltip()
+    
     $graph.append($row)
 
     this.grid.push(gridRow)
