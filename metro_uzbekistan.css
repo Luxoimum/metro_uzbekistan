@@ -59,8 +59,8 @@ body {
     -webkit-transform: rotate(90deg); /* Safari 3-8 */
     transform: rotate(90deg);
     position: relative;
-    right: 319px;
-    top: 80px;
+    right: 409px;
+    top: 51px;
 }
 .l-yun {
     position: relative;
@@ -79,6 +79,21 @@ body {
     position: relative;
     right: 120px;
     top: -120px;
+}
+.chorsu-desp {
+    position: relative;
+    right: 180px;
+    top: -140px;
+}
+.tin-desp {
+    position: relative;
+    right: 240px;
+    top: -160px;
+}
+.beruni-desp {
+    position: relative;
+    right: 300px;
+    top: -180px;
 }
 .to-uzb {
     -ms-transform: skewX(-20deg); /* IE 9 */
@@ -104,8 +119,31 @@ body {
     right: 90px;
     top: -90px;
 }
-.diagonal-desp {
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Safari 3-8 */
-    transform: rotate(45deg);
+.to-cho {
+    -ms-transform: rotate(56deg); /* IE 9 */
+    -webkit-transform: rotate(56deg); /* Safari 3-8 */
+    transform: rotate(56deg);
+    position: relative;
+    right: 150px;
+    top: -130px;
+}
+.to-tin {
+    -ms-transform: rotate(56deg); /* IE 9 */
+    -webkit-transform: rotate(56deg); /* Safari 3-8 */
+    transform: rotate(56deg);
+    position: relative;
+    right: 210px;
+    top: -150px;
+}
+.to-ber {
+    -ms-transform: rotate(56deg); /* IE 9 */
+    -webkit-transform: rotate(56deg); /* Safari 3-8 */
+    transform: rotate(56deg);
+    position: relative;
+    right: 270px;
+    top: -170px;
+}
+.mapa {
+    width: 1016px !important;
+    height: 728px !important;
 }
