@@ -90,6 +90,7 @@ GraphSearch.prototype.initialize = function() {
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 7
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,// 8
     0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]// 9
+
   // Creamos la etiqueta span que se va a usar como Template para las paradas y caminos
   let $cellTemplate = $("<span />").addClass("grid_item"),
       startSet = false,
@@ -114,12 +115,8 @@ GraphSearch.prototype.initialize = function() {
       gridRow.push($cell)
       $cell.addClass('cell') // mirar porque de le agrega la clase cell ahora y no antes de meterlo en gridRow
 
-      /*
-      * Aqui es donde se guarda la distancia real (el peso)
-      * este es el sitio en el que dependiendo de los parametros
-      * de la ruta el peso cambia, por ejemplo, cuando se hace un
-      * trasbordo (mirar en profundiad).
-      */
+
+      // Aqui es donde se guarda la distancia real (el peso)
       let peso_celda = mapa[posicion_mapa]
 
       if(peso_celda === 0) {
