@@ -29,7 +29,28 @@ body {
 /*========================
 ===LA PARTE DE LA MAGIA ==
 =========================*/
-
+/* Etiquetas paradas */
+.etiquetas {
+	color: #c02c2c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	padding-bottom: 90px;
+	padding-left: 30px;
+}
+.etiquetas-a {
+	position: absolute;
+	transform: rotate(-90deg);
+	padding-bottom: 90px;
+	padding-left: 30px;
+}
+.etiquetas-v {
+	color: #55ac44;
+	font-weight: bold;
+	position: absolute;
+	padding-left: 30px;
+}
+/* Elementos de la linea*/
 .parada {
     list-style: none;
     width: 20px !important;
@@ -45,6 +66,7 @@ body {
     margin-bottom:-10px;
     margin-left: 5px;
 }
+/* Colores de las lineas */
 .linea-v {
     background-color: #55ac44;
 }
@@ -54,18 +76,31 @@ body {
 .linea-a {
     background-color: #22539c;
 }
+/* Cuadrar lineas*/
+.l-chil {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+    position: relative;
+    left: 312px;
+    bottom: 61px;
+		z-index: 1;
+}
 .l-uzb {
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Safari 3-8 */
     transform: rotate(90deg);
     position: relative;
-    right: 409px;
-    top: 51px;
+    right: 336px;
+    top: 80px;
+		z-index: 3;
 }
 .l-yun {
     position: relative;
-    left: 160px;
+    left: 203px;
 }
+
+/* Paradas linea azul */
 .uzbekistan-desp {
     position: relative;
     right: 20px;
@@ -95,6 +130,133 @@ body {
     right: 300px;
     top: -180px;
 }
+/* Paradas linea roja */
+.buyuk-desp {
+    position: relative;
+    right: 84px;
+}
+.pushkin-desp {
+		position: relative;
+		right: 55px;
+}
+.khamid-desp {
+	position: relative;
+	right: 23px;
+}
+.buny-desp {
+	position: relative;
+	left: 29px;
+}
+.milli-desp {
+	position: relative;
+	left: 58px;
+}
+.novza-desp {
+	position: relative;
+	left: 86px;
+}
+.mirzo-desp {
+	position: relative;
+	left: 115px;
+}
+.chil-desp {
+	position: relative;
+	left: 144px;
+}
+.olm-desp {
+	position: relative;
+	left: 173px;
+}
+
+/* Caminos linea roja */
+.to-push {
+	-ms-transform: skewX(-26deg); /* IE 9 */
+	-webkit-transform: skewX(-26deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	right: 70px;
+}
+.to-amir1 {
+  -ms-transform: skewX(-20deg); /* IE 9 */
+  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
+  transform: skewX(26deg);
+  position: relative;
+  right: 13px;
+	bottom: 9px;
+}
+.to-amir2 {
+  -ms-transform: skewX(-20deg); /* IE 9 */
+  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
+  transform: skewX(0deg);
+  position: relative;
+  right: -1px;
+	bottom: 1px;
+}
+.to-khamid {
+	  -ms-transform: skewX(-20deg); /* IE 9 */
+	  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	  transform: skewX(28deg);
+	  position: relative;
+	  right: 39px;
+}
+.to-buny {
+		-ms-transform: skewX(-20deg); /* IE 9 */
+		-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+		transform: skewX(26deg);
+		position: relative;
+		right: 42px;
+}
+.to-milli {
+		-ms-transform: skewX(-20deg); /* IE 9 */
+		-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+		transform: skewX(26deg);
+		position: relative;
+		left: 43px;
+}
+.to-buny1{
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(0deg);
+	position: relative;
+	bottom: 10px;
+}
+.to-buny2{
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(25deg);
+	position: relative;
+	right: -14px;
+	bottom: 1px;
+}
+.to-novza {
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	left: 72px;
+}
+.to-mirzo {
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	left: 100px;
+}
+.to-chil {
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	left: 129px;
+}
+.to-olma {
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	left: 158px;
+}
+/* Desplazamiento caminos linea azul */
 .to-uzb {
     -ms-transform: skewX(-20deg); /* IE 9 */
     -webkit-transform: skewX(-20deg); /* Safari 3-8 */
