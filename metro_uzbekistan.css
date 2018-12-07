@@ -30,25 +30,115 @@ body {
 ===LA PARTE DE LA MAGIA ==
 =========================*/
 /* Etiquetas paradas */
-.etiquetas {
+.etiqueta-rnovza {
 	color: #c02c2c;
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
 	padding-bottom: 90px;
-	padding-left: 30px;
+	padding-left: 18px;
 }
-.etiquetas-a {
+.etiqueta-rbuny {
+	color: #c02c2c;
+	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-	padding-bottom: 90px;
+	padding-bottom: 127px;
 	padding-left: 30px;
 }
-.etiquetas-v {
+.etiqueta-rbuyuk {
+	color: #c02c2c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+  bottom: 75px;
+	left: -42px;
+	width: 120px;
+}
+.etiqueta-ramir {
+	color: #c02c2c;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+  bottom: 491px;
+	left: -42px;
+	width: 120px;
+}
+.etiqueta-rmayd {
+	color: #c02c2c;
+	font-size: 14px;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+  bottom: 487px;
+	left: 17px;
+	width: 120px;
+}
+.etiqueta-rpak {
+	color: #c02c2c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+  bottom: 376px;
+	left: -31px;
+	width: 120px;
+}
+.etiqueta-rmirzo {
+	color: #c02c2c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	padding-bottom: 130px;
+	right: -86px;
+	width: max-content;
+}
+.etiqueta-rmilli {
+	color: #c02c2c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	padding-bottom: 94px;
+	width: max-content;
+}
+.etiqueta-a {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 44px;
+	right: -18px;
+	width: max-content;
+}
+.etiqueta-agafur {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 67px;
+	right: -32px;
+	width: max-content;
+}
+.etiqueta-auzb {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 8px;
+	right: -58px;
+}
+.etiqueta-v {
 	color: #55ac44;
 	font-weight: bold;
 	position: absolute;
 	padding-left: 30px;
+}
+.etiqueta-vbot {
+	color: #55ac44;
+	font-weight: bold;
+	position: absolute;
+	padding-left: 22px;
+	padding-top: 16px;
 }
 /* Elementos de la linea*/
 .parada {
@@ -91,7 +181,7 @@ body {
     -webkit-transform: rotate(90deg); /* Safari 3-8 */
     transform: rotate(90deg);
     position: relative;
-    right: 336px;
+    right: 335px;
     top: 80px;
 		z-index: 3;
 }
