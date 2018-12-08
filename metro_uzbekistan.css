@@ -15,16 +15,17 @@ body {
 }
 #header{
 	position: relative;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 80px;
 }
 /* Centered text */
 .centered {
 	font-weight:bold;
 	color: white;
-	font-size: 5vw;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /*========================
 ===LA PARTE DE LA MAGIA ==
@@ -126,6 +127,46 @@ body {
 	transform: rotate(-90deg);
 	top: 8px;
 	right: -58px;
+}
+.etiqueta-akos {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 266px;
+	right: 129px;
+}
+.etiqueta-aoyb {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 177px;
+	right: 146px;
+}
+.etiqueta-atosh{
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 108px;
+	right: 199px;
+}
+.etiqueta-amash{
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 66px;
+	right: 115px;
+}
+.etiqueta-ados{
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: -39px;
+	right: 159px;
 }
 .etiqueta-v {
 	color: #55ac44;
