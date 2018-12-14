@@ -82,8 +82,8 @@ body {
 	position: absolute;
 	transform: rotate(-90deg);
   bottom: 376px;
-	left: -31px;
-	width: 120px;
+	left: -35px;
+	width: 106px;
 }
 .etiqueta-rmirzo {
 	color: #c02c2c;
@@ -120,29 +120,39 @@ body {
 	right: -32px;
 	width: max-content;
 }
+.etiqueta-aalish {
+	color: #22539c;
+	font-weight: bold;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 57px;
+	right: -22px;
+	width: max-content;
+}
 .etiqueta-auzb {
 	color: #22539c;
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-	top: 8px;
-	right: -58px;
+	top: 51px;
+	right: -47px;
+	width: max-content;
 }
 .etiqueta-akos {
 	color: #22539c;
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-	top: 266px;
-	right: 129px;
+	top: 290px;
+	right: 132px;
 }
 .etiqueta-aoyb {
 	color: #22539c;
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-	top: 177px;
-	right: 146px;
+	top: 165px;
+	right: 138px;
 }
 .etiqueta-atosh{
 	color: #22539c;
@@ -157,8 +167,8 @@ body {
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-	top: 66px;
-	right: 115px;
+	top: 9px;
+	right: 180px;
 }
 .etiqueta-ados{
 	color: #22539c;
@@ -174,12 +184,19 @@ body {
 	position: absolute;
 	padding-left: 30px;
 }
-.etiqueta-vbot {
+.etiqueta-vyunus {
 	color: #55ac44;
 	font-weight: bold;
 	position: absolute;
 	padding-left: 22px;
 	padding-top: 16px;
+}
+.etiqueta-vming {
+	color: #55ac44;
+	font-weight: bold;
+	position: absolute;
+	padding-left: 0px;
+	padding-top: 26px;
 }
 /* Elementos de la linea*/
 .parada {
@@ -215,7 +232,7 @@ body {
     position: relative;
     left: 312px;
     bottom: 61px;
-		z-index: 1;
+		z-index: 3;
 }
 .l-uzb {
     -ms-transform: rotate(90deg); /* IE 9 */
@@ -224,7 +241,7 @@ body {
     position: relative;
     right: 335px;
     top: 80px;
-		z-index: 3;
+		z-index: 2;
 }
 .l-yun {
     position: relative;
