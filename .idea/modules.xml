@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../metro2.0/.idea/metro.iml" filepath="$PROJECT_DIR$/../metro2.0/.idea/metro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/metro_uzbekistan.iml" filepath="$PROJECT_DIR$/.idea/metro_uzbekistan.iml" />
+    </modules>
+  </component>
+</project>

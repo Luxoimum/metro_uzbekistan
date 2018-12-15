@@ -12,110 +12,9 @@
         <title>Tashkent Metro</title>
     </head>
     <body>
-        <div id="header" class="row">
-            <img src="images/tashm.png" class="col">
-            <div class="centered">Tashkent Metro</div>
-        </div>
-        <div id="content" class="row">
-            <div id="results-container" class="col-4 border-right border-secondary">
-                <div class="border-bottom border-secondary my-3 col">
-                    <h3 class="row">
-                        Planifica tu ruta:
-                    </h3>
-                    <div id="col_origen" class="row">
-                        <label class="col-4 bg-light" for="inlineFormCustomSelectPref">Origen</label>
-                        <select id="select_origen" class="custom-select col-8">
-                            <option value="0">Origen</option>
-                            <option value="11_22">Abdulla Kodiriy</option>
-                            <option value="13_22">Amir Temur Hiyoboni</option>
-                            <option value="5_18">Beruni</option>
-                            <option value="7_22">Bodomzor</option>
-                            <option value="13_28">Buyuk Ipak Yuli</option>
-                            <option value="13_16">Bunyodkor</option>
-                            <option value="13_8">Chilonzor</option>
-                            <option value="9_18">Chorsu</option>
-                            <option value="15_28">Dostlik</option>
-                            <option value="11_18">Gafur Gulom</option>
-                            <option value="13_24">Khamid Alimjan</option>
-                            <option value="15_20">Kosmonavtlar</option>
-                            <option value="15_26">Mashinasozlar</option>
-                            <option value="13_14">Milliy Bog</option>
-                            <option value="9_22">Minor</option>
-                            <option value="13_10">Mirzo Ulugbek</option>
-                            <option value="13_20">Mustakillik Maydoni</option>
-                            <option value="13_12">Novza</option>
-                            <option value="5_16">Olmazor</option>
-                            <option value="15_22">Oybek</option>
-                            <option value="13_18">Pakhtakor</option>
-                            <option value="13_26">Pushkin</option>
-                            <option value="5_22">Shakhriston</option>
-                            <option value="7_18">Tinchlik</option>
-                            <option value="15_24">Toshkent</option>
-                            <option value="15_18">Uzbekistan</option>
-                        </select>
-                    </div>
-                    <!-- Desplegable para la estacion destino -->
-                    <div id="col_destino" class="row mb-4">
-                        <label class="col-4 bg-light" for="inlineFormCustomSelectPref">Destino</label>
-                        <select id="select_destino" class="custom-select col-8">
-                            <option value="0">Destino</option>
-                            <option value="11_22">Abdulla Kodiriy</option>
-                            <option value="13_22">Amir Temur Hiyoboni</option>
-                            <option value="5_18">Beruni</option>
-                            <option value="7_22">Bodomzor</option>
-                            <option value="13_28">Buyuk Ipak Yuli</option>
-                            <option value="13_16">Bunyodkor</option>
-                            <option value="13_8">Chilonzor</option>
-                            <option value="9_18">Chorsu</option>
-                            <option value="15_28">Dostlik</option>
-                            <option value="11_18">Gafur Gulom</option>
-                            <option value="13_24">Khamid Alimjan</option>
-                            <option value="15_20">Kosmonavtlar</option>
-                            <option value="15_26">Mashinasozlar</option>
-                            <option value="13_14">Milliy Bog</option>
-                            <option value="9_22">Minor</option>
-                            <option value="13_10">Mirzo Ulugbek</option>
-                            <option value="13_20">Mustakillik Maydoni</option>
-                            <option value="13_12">Novza</option>
-                            <option value="5_16">Olmazor</option>
-                            <option value="15_22">Oybek</option>
-                            <option value="13_18">Pakhtakor</option>
-                            <option value="13_26">Pushkin</option>
-                            <option value="5_22">Shakhriston</option>
-                            <option value="7_18">Tinchlik</option>
-                            <option value="15_24">Toshkent</option>
-                            <option value="15_18">Uzbekistan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col">
-                    <h3 class="row">
-                        Resultados:
-                    </h3>
-                    <div class="row">
-                        <div class="col-4 bg-light">Total paradas: </div>
-                        <div id="nparadas"class="col-8"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4 bg-light">Total distancia: </div>
-                        <div id="ndistancia"class="col-8"></div>
-                    </div>
-                    <div class="row mt-4">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nº</th>
-                                    <th>Parada</th>
-                                </tr>
-                            </thead>
-                            <tbody id='table_tbody'></tbody>
-                        </table>
-                    </div>
-
-                </div>
-
-            </div>
-            <div id="map-container" class="col-8">
+        <div id="mapa">
+            <img id="fundido" src="images/fundido.png" style="position:fixed;left:-200px;top:-250px;opacity:.7"/>
+            <div id="map-container" style="visibility:none;" class="col-8">
                 <div class="row mapa">
                     <!-- Linea roja -->
                     <div class="col">
@@ -192,7 +91,34 @@
                 </div>
             </div>
         </div>
-        <div id="footer"></div>
+        <nav class="navbar">
+            <div id="select_content"></div>
+            <div id="tabla" class="metro-tabla"></div>
+            <div class="d-none">
+                <div class="col">
+                        <div class="row">
+                            <div class="col-4 bg-light">Total paradas: </div>
+                            <div id="nparadas"class="col-8"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 bg-light">Total distancia: </div>
+                            <div id="ndistancia"class="col-8"></div>
+                        </div>
+                    </div>
+                <div class="row mt-4">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Parada</th>
+                    </tr>
+                    </thead>
+                    <tbody id='table_tbody'></tbody>
+                </table>
+            </div>
+            </div>
+        </nav>
+
         <script type='text/javascript' src='metro_uzbekistan.js'></script>
     </body>
 </html>
