@@ -3,8 +3,8 @@ html, body {
 	margin:0;
 }
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #222;
 }
 #content{
 	margin-left: 10px;
@@ -22,10 +22,10 @@ body {
 .centered {
 	font-weight:bold;
 	color: white;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 /*========================
 ===LA PARTE DE LA MAGIA ==
@@ -52,7 +52,7 @@ body {
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-  bottom: 75px;
+	bottom: 75px;
 	left: -42px;
 	width: 120px;
 }
@@ -62,7 +62,7 @@ body {
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-  bottom: 491px;
+	bottom: 491px;
 	left: -42px;
 	width: 120px;
 }
@@ -72,7 +72,7 @@ body {
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-  bottom: 487px;
+	bottom: 487px;
 	left: 17px;
 	width: 120px;
 }
@@ -81,7 +81,7 @@ body {
 	font-weight: bold;
 	position: absolute;
 	transform: rotate(-90deg);
-  bottom: 376px;
+	bottom: 376px;
 	left: -35px;
 	width: 106px;
 }
@@ -200,92 +200,92 @@ body {
 }
 /* Elementos de la linea*/
 .parada {
-    list-style: none;
-    width: 20px !important;
-    height: 20px !important;
-    background-color: #55ac44;
-    border-radius: 10px;
+	list-style: none;
+	width: 20px !important;
+	height: 20px !important;
+	background-color: #55ac44;
+	border-radius: 10px;
 }
 .camino {
-    list-style: none;
-    width: 10px !important;
-    height: 60px !important;
-    margin-top: -10px;
-    margin-bottom:-10px;
-    margin-left: 5px;
+	list-style: none;
+	width: 10px !important;
+	height: 60px !important;
+	margin-top: -10px;
+	margin-bottom:-10px;
+	margin-left: 5px;
 }
 /* Colores de las lineas */
 .linea-v {
-    background-color: #55ac44;
+	background-color: #55ac44;
 }
 .linea-r {
-    background-color: #c02c2c;
+	background-color: #c02c2c;
 }
 .linea-a {
-    background-color: #22539c;
+	background-color: #22539c;
 }
 /* Cuadrar lineas*/
 .l-chil {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
-    position: relative;
-    left: 312px;
-    bottom: 61px;
-		z-index: 3;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari 3-8 */
+	transform: rotate(90deg);
+	position: relative;
+	left: 312px;
+	bottom: 61px;
+	z-index: 3;
 }
 .l-uzb {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
-    position: relative;
-    right: 335px;
-    top: 80px;
-		z-index: 2;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari 3-8 */
+	transform: rotate(90deg);
+	position: relative;
+	right: 335px;
+	top: 80px;
+	z-index: 2;
 }
 .l-yun {
-    position: relative;
-    left: 203px;
+	position: relative;
+	left: 203px;
 }
 
 /* Paradas linea azul */
 .uzbekistan-desp {
-    position: relative;
-    right: 20px;
+	position: relative;
+	right: 20px;
 }
 .pakhtakor-desp {
-    position: relative;
-    right: 60px;
-    top: -59px;
+	position: relative;
+	right: 60px;
+	top: -59px;
 }
 .gafur-desp {
-    position: relative;
-    right: 120px;
-    top: -120px;
+	position: relative;
+	right: 120px;
+	top: -120px;
 }
 .chorsu-desp {
-    position: relative;
-    right: 180px;
-    top: -140px;
+	position: relative;
+	right: 180px;
+	top: -140px;
 }
 .tin-desp {
-    position: relative;
-    right: 240px;
-    top: -160px;
+	position: relative;
+	right: 240px;
+	top: -160px;
 }
 .beruni-desp {
-    position: relative;
-    right: 300px;
-    top: -180px;
+	position: relative;
+	right: 300px;
+	top: -180px;
 }
 /* Paradas linea roja */
 .buyuk-desp {
-    position: relative;
-    right: 84px;
+	position: relative;
+	right: 84px;
 }
 .pushkin-desp {
-		position: relative;
-		right: 55px;
+	position: relative;
+	right: 55px;
 }
 .khamid-desp {
 	position: relative;
@@ -325,41 +325,41 @@ body {
 	right: 70px;
 }
 .to-amir1 {
-  -ms-transform: skewX(-20deg); /* IE 9 */
-  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
-  transform: skewX(26deg);
-  position: relative;
-  right: 13px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	right: 13px;
 	bottom: 9px;
 }
 .to-amir2 {
-  -ms-transform: skewX(-20deg); /* IE 9 */
-  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
-  transform: skewX(0deg);
-  position: relative;
-  right: -1px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(0deg);
+	position: relative;
+	right: -1px;
 	bottom: 1px;
 }
 .to-khamid {
-	  -ms-transform: skewX(-20deg); /* IE 9 */
-	  -webkit-transform: skewX(-20deg); /* Safari 3-8 */
-	  transform: skewX(28deg);
-	  position: relative;
-	  right: 39px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(28deg);
+	position: relative;
+	right: 39px;
 }
 .to-buny {
-		-ms-transform: skewX(-20deg); /* IE 9 */
-		-webkit-transform: skewX(-20deg); /* Safari 3-8 */
-		transform: skewX(26deg);
-		position: relative;
-		right: 42px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	right: 42px;
 }
 .to-milli {
-		-ms-transform: skewX(-20deg); /* IE 9 */
-		-webkit-transform: skewX(-20deg); /* Safari 3-8 */
-		transform: skewX(26deg);
-		position: relative;
-		left: 43px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(26deg);
+	position: relative;
+	left: 43px;
 }
 .to-buny1{
 	-ms-transform: skewX(-20deg); /* IE 9 */
@@ -406,54 +406,87 @@ body {
 }
 /* Desplazamiento caminos linea azul */
 .to-uzb {
-    -ms-transform: skewX(-20deg); /* IE 9 */
-    -webkit-transform: skewX(-20deg); /* Safari 3-8 */
-    transform: skewX(-20deg);
-    position: relative;
-    right: 10px;
+	-ms-transform: skewX(-20deg); /* IE 9 */
+	-webkit-transform: skewX(-20deg); /* Safari 3-8 */
+	transform: skewX(-20deg);
+	position: relative;
+	right: 10px;
 }
 .to-pak {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
-    position: relative;
-    right: 42px;
-    top: -30px;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari 3-8 */
+	transform: rotate(90deg);
+	position: relative;
+	right: 42px;
+	top: -30px;
 }
 
 .to-gaf {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari 3-8 */
-    transform: rotate(90deg);
-    position: relative;
-    right: 90px;
-    top: -90px;
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari 3-8 */
+	transform: rotate(90deg);
+	position: relative;
+	right: 90px;
+	top: -90px;
 }
 .to-cho {
-    -ms-transform: rotate(56deg); /* IE 9 */
-    -webkit-transform: rotate(56deg); /* Safari 3-8 */
-    transform: rotate(56deg);
-    position: relative;
-    right: 150px;
-    top: -130px;
+	-ms-transform: rotate(56deg); /* IE 9 */
+	-webkit-transform: rotate(56deg); /* Safari 3-8 */
+	transform: rotate(56deg);
+	position: relative;
+	right: 150px;
+	top: -130px;
 }
 .to-tin {
-    -ms-transform: rotate(56deg); /* IE 9 */
-    -webkit-transform: rotate(56deg); /* Safari 3-8 */
-    transform: rotate(56deg);
-    position: relative;
-    right: 210px;
-    top: -150px;
+	-ms-transform: rotate(56deg); /* IE 9 */
+	-webkit-transform: rotate(56deg); /* Safari 3-8 */
+	transform: rotate(56deg);
+	position: relative;
+	right: 210px;
+	top: -150px;
 }
 .to-ber {
-    -ms-transform: rotate(56deg); /* IE 9 */
-    -webkit-transform: rotate(56deg); /* Safari 3-8 */
-    transform: rotate(56deg);
-    position: relative;
-    right: 270px;
-    top: -170px;
+	-ms-transform: rotate(56deg); /* IE 9 */
+	-webkit-transform: rotate(56deg); /* Safari 3-8 */
+	transform: rotate(56deg);
+	position: relative;
+	right: 270px;
+	top: -170px;
 }
 .mapa {
-    width: 1016px !important;
-    height: 728px !important;
+	width: 1016px !important;
+	height: 728px !important;
+}
+.start {
+	background-image: url(images/origen.png);
+}
+
+.end {
+	background-image: url(images/destino.png) !important;
+}
+
+.start, .end {
+	background-size: cover;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+
+.way {
+	background-color: white;
+	border-right: 3px solid black;
+	border-left: 3px solid black;
+}
+
+.way-transit {
+	background-color: #33333300;
+}
+.way, .way-transit {
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
 }
