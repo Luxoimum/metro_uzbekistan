@@ -491,3 +491,9 @@ body {
 	position: absolute;
 	top: 79px;
 }
+
+.pointer {
+	position: absolute;
+	left: -9999px;
+	z-index:30;
+}
