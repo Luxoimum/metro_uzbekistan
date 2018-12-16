@@ -487,13 +487,7 @@ body {
 	-o-transition: all .3s;
 	transition: all .3s;
 }
-
-.scaled {
-	transform: perspective(500px) scale3d(.5, .5, 1) translateZ(100px);
-}
-
-.pos-ab {
-	position:absolute;
-	top: -80px;
-	left:-180px;
+#header-title {
+	position: absolute;
+	top: 79px;
 }
