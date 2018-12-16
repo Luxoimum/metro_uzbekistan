@@ -263,17 +263,17 @@ body {
 .chorsu-desp {
 	position: relative;
 	right: 180px;
-	top: -140px;
+	top: -151px;
 }
 .tin-desp {
 	position: relative;
 	right: 240px;
-	top: -160px;
+	top: -183px;
 }
 .beruni-desp {
 	position: relative;
 	right: 300px;
-	top: -180px;
+	top: -215px;
 }
 /* Paradas linea roja */
 .buyuk-desp {
@@ -427,28 +427,28 @@ body {
 	top: -90px;
 }
 .to-cho {
-	-ms-transform: rotate(56deg); /* IE 9 */
-	-webkit-transform: rotate(56deg); /* Safari 3-8 */
-	transform: rotate(56deg);
+	-ms-transform: rotate(56deg) skew(26deg); /* IE 9 */
+	-webkit-transform: rotate(56deg) skew(26deg); /* Safari 3-8 */
+	transform: rotate(91deg) skew(26deg);
 	position: relative;
 	right: 150px;
-	top: -130px;
+	top: -136px;
 }
 .to-tin {
-	-ms-transform: rotate(56deg); /* IE 9 */
-	-webkit-transform: rotate(56deg); /* Safari 3-8 */
-	transform: rotate(56deg);
+	-ms-transform: rotate(56deg) skew(26deg); /* IE 9 */
+	-webkit-transform: rotate(56deg) skew(26deg); /* Safari 3-8 */
+	transform: rotate(91deg) skew(26deg);
 	position: relative;
 	right: 210px;
-	top: -150px;
+	top: -168px;
 }
 .to-ber {
-	-ms-transform: rotate(56deg); /* IE 9 */
-	-webkit-transform: rotate(56deg); /* Safari 3-8 */
-	transform: rotate(56deg);
+	-ms-transform: rotate(56deg) skew(26deg); /* IE 9 */
+	-webkit-transform: rotate(56deg) skew(26deg); /* Safari 3-8 */
+	transform: rotate(91deg) skew(26deg);
 	position: relative;
 	right: 270px;
-	top: -170px;
+	top: -200px;
 }
 .mapa {
 	width: 1016px !important;
